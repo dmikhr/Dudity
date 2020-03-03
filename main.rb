@@ -1,8 +1,9 @@
 require_relative 'lib/dudity.rb'
 
-Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', except: ['app/controllers'])
-#
-# Dudity.visualise('./projects/my_app', only: ['app/models'])
+# Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', except: ['app/controllers'])
+
+Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', only: ['app/models'])
+# Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub') # scan all
 #
 # Dudity.visualise('./projects/my_app', only: ['app/models'], ignore_classes: ['SomeClass'])
 #
