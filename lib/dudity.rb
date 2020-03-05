@@ -43,16 +43,8 @@ class Dudity
 
       diff = DownloadService.call(diff_url, :read_by_line)
       @diff_data = GitDiffService.call(diff)
-      @diff_data.map { |item| process_item_for_diff(item) }
-
-      renamed = @diff_data.select { |item| item[:status] == :renamed_class }
-
-      return false if params_empty?
-
-      dudes = DudeGl.new [@params1.flatten.compact, @params2.flatten.compact],
-                          dudes_per_row_max: 4, renamed: renamed, diff: true
-      dudes.render
-      dudes.save fname
+      return analyze_code(@diff_data) if file_type == :svg
+      return generate_html_report if file_type == :html
     end
 
     private
@@ -60,6 +52,58 @@ class Dudity
     # generate name based on pull request data. Example: DudesHub_pull_5
     def fname
       @public_pr_link.split('/')[-3, 3].join('_')
+    end
+
+    # generate html report title based on repo data, make each word capitalized
+    def report_title
+      @public_pr_link.split('/')[-3, 3].map(&:capitalize).join(' ')
+    end
+
+    def separate_code
+      @diff_data_controllers = []
+      @diff_data_models = []
+      @diff_data_others = []
+
+      @diff_data.each do |item|
+        if item[:old_name]&.start_with?("app/controllers") || item[:new_name]&.start_with?("app/controllers")
+          @diff_data_controllers << item
+        elsif item[:old_name]&.start_with?("app/models") || item[:new_name]&.start_with?("app/models")
+          @diff_data_models << item
+        else
+          @diff_data_others << item
+        end
+      end
+    end
+
+    def analyze_by_category
+      analyze_code(@diff_data_controllers, :controllers) if !@diff_data_controllers.empty?
+      analyze_code(@diff_data_models, :models) if !@diff_data_models.empty?
+      analyze_code(@diff_data_others, :others) if !@diff_data_others.empty?
+    end
+
+    def generate_html_report
+      separate_code
+      analyze_by_category
+
+      html = open('templates/dudes_report.html').read
+      html = html.sub('[dudes_report_title]', report_title)
+      File.open("html_reports/#{fname}.html", 'w') { |file| file.write(html) }
+    end
+
+    def analyze_code(diff_data, label = nil)
+      @params1 = []
+      @params2 = []
+
+      diff_data.map { |item| process_item_for_diff(item) }
+      renamed = diff_data.select { |item| item[:status] == :renamed_class }
+
+      return false if params_empty?
+
+      dudes = DudeGl.new [@params1.flatten.compact, @params2.flatten.compact],
+                          dudes_per_row_max: 4, renamed: renamed, diff: true
+      dudes.render
+
+      label ? dudes.save(label) : dudes.save(fname)
     end
 
     def process_item(project_file)
