@@ -43,7 +43,7 @@ class Dudity
 
       diff = DownloadService.call(diff_url, :read_by_line)
       @diff_data = GitDiffService.call(diff)
-      return analyze_code(@diff_data) if file_type == :svg
+      return generate_svg if file_type == :svg
       return generate_html_report if file_type == :html
     end
 
@@ -57,6 +57,20 @@ class Dudity
     # generate html report title based on repo data, make each word capitalized
     def report_title
       @public_pr_link.split('/')[-3, 3].map(&:capitalize).join(' ')
+    end
+
+    def generate_svg
+      analyze_code(@diff_data)
+    end
+
+    def generate_html_report
+      separate_code
+      analyze_by_category
+
+      html = open('templates/dudes_report.html').read
+      html = html.sub('[dudes_report_title]', report_title)
+      @report_file_path = "#{fname}.html"
+      File.open(@report_file_path, 'w') { |file| file.write(html) }
     end
 
     def separate_code
@@ -79,15 +93,6 @@ class Dudity
       analyze_code(@diff_data_controllers, :controllers) if !@diff_data_controllers.empty?
       analyze_code(@diff_data_models, :models) if !@diff_data_models.empty?
       analyze_code(@diff_data_others, :others) if !@diff_data_others.empty?
-    end
-
-    def generate_html_report
-      separate_code
-      analyze_by_category
-
-      html = open('templates/dudes_report.html').read
-      html = html.sub('[dudes_report_title]', report_title)
-      File.open("html_reports/#{fname}.html", 'w') { |file| file.write(html) }
     end
 
     def analyze_code(diff_data, label = nil)
