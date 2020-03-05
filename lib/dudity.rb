@@ -2,11 +2,10 @@
 # in the final version of app gems will be used
 require '/Users/dmkp/Documents/code/ruby/dudes/dudegl_repo/lib/dudegl.rb'
 require '/Users/dmkp/Documents/code/ruby/dudes/zverok_dudes_fork2/dudes/lib/dudes.rb'
-require_relative 'git_diff_service'
-require_relative 'scan_app'
 require 'open-uri'
 require 'byebug'
 
+Dir[File.dirname(__FILE__) + '/**/*.rb'].each {|file| require_relative file }
 
 class Dudity
   class << self
@@ -21,7 +20,7 @@ class Dudity
       @params_list = []
       project_files.each { |project_file| process_item(project_file) }
 
-      dudes = DudeGl.new @params_list, dudes_per_row_max: 4
+      dudes = DudeGl.new @params_list.flatten.compact, dudes_per_row_max: 4
       dudes.render
       dudes.save app_name
     end
@@ -34,16 +33,21 @@ class Dudity
     end
 
     def visualise_pr(public_pr_link, opt = {})
-      # can we implement this without access to Github API? (DudesHub can do it only using API)
+      @public_pr_link = public_pr_link
+      diff_url = "#{public_pr_link}.diff"
+      opt.key?(:as) ? file_type = opt[:as] : file_type = :svg
+      opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
+
       @params1 = []
       @params2 = []
 
-      diff_url = "#{public_pr_link}.diff".readlines
-      # generate name based on pull request data. Example: DudesHub_pull_5
-      fname = public_pr_link.split('/')[-3, 3].join('_')
+      diff = DownloadService.call(diff_url, :read_by_line)
+      @diff_data = GitDiffService.call(diff)
+      @diff_data.map { |item| process_item_for_diff(item) }
 
-      diff_data = GitDiffService.call(diff_lines)
-      diff_data.map { |item| process_item(item) }
+      renamed = @diff_data.select { |item| item[:status] == :renamed_class }
+
+      return false if params_empty?
 
       dudes = DudeGl.new [@params1.flatten.compact, @params2.flatten.compact],
                           dudes_per_row_max: 4, renamed: renamed, diff: true
@@ -53,9 +57,24 @@ class Dudity
 
     private
 
+    # generate name based on pull request data. Example: DudesHub_pull_5
+    def fname
+      @public_pr_link.split('/')[-3, 3].join('_')
+    end
+
     def process_item(project_file)
       code = open(project_file).read
       @params_list << Dudes::Calculator.new(code).call
+    end
+
+    def process_item_for_diff(item)
+      processed_code = ProcessCodeService.new(@public_pr_link, @pull_branch, item).call
+      @params1 << processed_code.first
+      @params2 << processed_code.last
+    end
+
+    def params_empty?
+      @params1.empty? || @params2.empty?
     end
   end
 end
