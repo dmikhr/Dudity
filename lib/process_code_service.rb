@@ -3,7 +3,7 @@
 require '/Users/dmkp/Documents/code/ruby/dudes/zverok_dudes_fork2/dudes/lib/dudes.rb'
 
 class ProcessCodeService
-  def initialize(public_pr_link, pull_branch, file_data)
+  def initialize(public_pr_link, pull_branch, file_data, local = false)
     @public_pr_link = public_pr_link
     @pull_branch = pull_branch
     @file_data = file_data
@@ -34,6 +34,11 @@ class ProcessCodeService
     code_pull_request = DownloadService.call(code_pull_request_branch_path)
     code_hash = Dudes::Calculator.new(code_pull_request).call
     @params2 = code_hash.first unless code_hash.empty?
+  end
+
+  def get_code
+    return open().read if local
+    return DownloadService.call(code_master_branch_path)
   end
 
   def code_master_branch_path

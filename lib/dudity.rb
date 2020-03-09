@@ -26,10 +26,12 @@ class Dudity
     end
 
     def visualise_diff(path_to_diff, opt = {})
+      @params1 = []
+      @params2 = []
       # TO-DO: read local diff file
       diff_lines = open(path_to_diff).readlines
-      diff_data = GitDiffService.call(diff_lines)
-      pp diff_data
+      @diff_data = GitDiffService.call(diff_lines)
+      generate_svg
     end
 
     def visualise_pr(public_pr_link, opt = {})
@@ -118,6 +120,12 @@ class Dudity
 
     def process_item_for_diff(item)
       processed_code = ProcessCodeService.new(@public_pr_link, @pull_branch, item).call
+      @params1 << processed_code.first
+      @params2 << processed_code.last
+    end
+
+    def process_item_for_diff_local(item)
+      processed_code = ProcessCodeService.new(@public_pr_link, @pull_branch, item, local = true).call
       @params1 << processed_code.first
       @params2 << processed_code.last
     end
