@@ -31,24 +31,30 @@ class Dudity
 
       # path to the dir where diff file is stored
       @path = path_to_diff.split('/').take(path_to_diff.split('/').size - 1).join('/')
-      opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
-      # TO-DO: read local diff file
-      diff_lines = open(path_to_diff).readlines
-      @diff_data = GitDiffService.call(diff_lines)
-      analyze_code_local(@diff_data)
-    end
 
-    def visualise_pr(public_pr_link, opt = {})
-      @path = public_pr_link
-      diff_url = "#{public_pr_link}.diff"
       opt.key?(:as) ? file_type = opt[:as] : file_type = :svg
       opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
 
+      diff = open(path_to_diff).readlines
+      @diff_data = GitDiffService.call(diff)
+
+      return generate_svg if file_type == :svg
+      return generate_html_report if file_type == :html
+    end
+
+    def visualise_pr(public_pr_link, opt = {})
       @params1 = []
       @params2 = []
 
+      @path = public_pr_link
+      diff_url = "#{public_pr_link}.diff"
+
+      opt.key?(:as) ? file_type = opt[:as] : file_type = :svg
+      opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
+
       diff = DownloadService.call(diff_url, :read_by_line)
       @diff_data = GitDiffService.call(diff)
+
       return generate_svg if file_type == :svg
       return generate_html_report if file_type == :html
     end
@@ -104,8 +110,11 @@ class Dudity
     def analyze_code(diff_data, label = nil)
       @params1 = []
       @params2 = []
+      local = !@path.start_with?('http')
+      local ? suffix = '_local' : suffix = ''
 
-      diff_data.map { |item| process_item_for_diff(item) }
+      diff_data.map { |item| process_item_for_diff(item, local) }
+
       renamed = diff_data.select { |item| item[:status] == :renamed_class }
 
       return false if params_empty?
@@ -114,23 +123,7 @@ class Dudity
                           dudes_per_row_max: 4, renamed: renamed, diff: true
       dudes.render
 
-      label ? dudes.save(label) : dudes.save(fname)
-    end
-
-    def analyze_code_local(diff_data, label = nil)
-      @params1 = []
-      @params2 = []
-
-      diff_data.map { |item| process_item_for_diff_local(item) }
-      renamed = diff_data.select { |item| item[:status] == :renamed_class }
-
-      return false if params_empty?
-
-      dudes = DudeGl.new [@params1.flatten.compact, @params2.flatten.compact],
-                          dudes_per_row_max: 4, renamed: renamed, diff: true
-      dudes.render
-
-      label ? dudes.save("#{label}_local") : dudes.save("#{fname}_local")
+      label ? dudes.save("#{label}#{suffix}") : dudes.save("#{fname}#{suffix}")
     end
 
     def process_item(project_file)
@@ -138,14 +131,8 @@ class Dudity
       @params_list << Dudes::Calculator.new(code).call
     end
 
-    def process_item_for_diff(item)
-      processed_code = ProcessCodeService.new(@path, @pull_branch, item).call
-      @params1 << processed_code.first
-      @params2 << processed_code.last
-    end
-
-    def process_item_for_diff_local(item)
-      processed_code = ProcessCodeService.new(@path, @pull_branch, item, local = true).call
+    def process_item_for_diff(item, local = false)
+      processed_code = ProcessCodeService.new(@path, @pull_branch, item, local = local).call
       @params1 << processed_code.first
       @params2 << processed_code.last
     end
