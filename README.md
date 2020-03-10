@@ -1,6 +1,6 @@
 # Dudity
 
-Dudity gem allows to test DudeGL features from your local machine.
+Dudity gem allows to test [DudeGL](https://github.com/dmikhr/DudeGL) features from your local machine.
 
 See examples in `main.rb`
 
