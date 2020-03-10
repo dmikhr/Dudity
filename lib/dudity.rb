@@ -13,6 +13,8 @@ class Dudity
       @path = path
       opt.key?(:except) ? except = opt[:except] : except = nil
       opt.key?(:only) ? only = opt[:only] : only = nil
+      opt.key?(:ignore_classes) ? ignore_classes = opt[:ignore_classes] : ignore_classes = nil
+      opt.key?(:only_classes) ? only_classes = opt[:only_classes] : only_classes = nil
 
       project_files = ScanApp.call(@path, except, only)
       app_name = @path.split('/').last
@@ -20,7 +22,11 @@ class Dudity
       @params_list = []
       project_files.each { |project_file| process_item(project_file) }
 
-      dudes = DudeGl.new @params_list.flatten.compact, dudes_per_row_max: 4
+      @params_list = @params_list.flatten.compact
+      exclude_classes(ignore_classes) if ignore_classes
+      include_classes(only_classes) if only_classes
+
+      dudes = DudeGl.new @params_list, dudes_per_row_max: 4
       dudes.render
       dudes.save app_name
     end
@@ -139,6 +145,14 @@ class Dudity
 
     def params_empty?
       @params1.empty? || @params2.empty?
+    end
+
+    def exclude_classes(classes)
+      @params_list = @params_list.reject { |param| classes.any? { |item| param[:name] == item } }
+    end
+
+    def include_classes(classes)
+      @params_list = @params_list.select { |param| classes.any? { |item| param[:name] == item } }
     end
   end
 end

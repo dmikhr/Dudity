@@ -2,10 +2,11 @@ require_relative 'lib/dudity.rb'
 
 # Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', except: ['app/controllers'])
 
-Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', only: ['app/models', 'app/controllers'])
+# Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', only: ['app/models', 'app/controllers'])
 # Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub') # scan all
 #
-# Dudity.visualise('./projects/my_app', only: ['app/models'], ignore_classes: ['SomeClass'])
+Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', only: ['app/models'], ignore_classes: ['Ability', 'User'])
+# Dudity.visualise('/Users/dmkp/Documents/code/ruby/dudes/dudeshub/dudeshub', only: ['app/models'], only_classes: ['Ability', 'User'])
 #
 # Dudity.visualise_diff('https://patch-diff.githubusercontent.com/raw/dmikhr/test_repo_dude/pull/4.diff')
 # Dudity.visualise_diff('/Users/dmkp/Documents/code/ruby/dudes/dudity_test/test_repo_dude/pull_7.diff', pull_branch: 'task4', as: :html)
