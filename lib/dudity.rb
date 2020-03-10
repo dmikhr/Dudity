@@ -28,14 +28,18 @@ class Dudity
     def visualise_diff(path_to_diff, opt = {})
       @params1 = []
       @params2 = []
+
+      # path to the dir where diff file is stored
+      @path = path_to_diff.split('/').take(path_to_diff.split('/').size - 1).join('/')
+      opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
       # TO-DO: read local diff file
       diff_lines = open(path_to_diff).readlines
       @diff_data = GitDiffService.call(diff_lines)
-      generate_svg
+      analyze_code_local(@diff_data)
     end
 
     def visualise_pr(public_pr_link, opt = {})
-      @public_pr_link = public_pr_link
+      @path = public_pr_link
       diff_url = "#{public_pr_link}.diff"
       opt.key?(:as) ? file_type = opt[:as] : file_type = :svg
       opt.key?(:pull_branch) ? @pull_branch = opt[:pull_branch] : return
@@ -53,12 +57,12 @@ class Dudity
 
     # generate name based on pull request data. Example: DudesHub_pull_5
     def fname
-      @public_pr_link.split('/')[-3, 3].join('_')
+      @path.split('/')[-3, 3].join('_')
     end
 
     # generate html report title based on repo data, make each word capitalized
     def report_title
-      @public_pr_link.split('/')[-3, 3].map(&:capitalize).join(' ')
+      @path.split('/')[-3, 3].map(&:capitalize).join(' ')
     end
 
     def generate_svg
@@ -113,19 +117,35 @@ class Dudity
       label ? dudes.save(label) : dudes.save(fname)
     end
 
+    def analyze_code_local(diff_data, label = nil)
+      @params1 = []
+      @params2 = []
+
+      diff_data.map { |item| process_item_for_diff_local(item) }
+      renamed = diff_data.select { |item| item[:status] == :renamed_class }
+
+      return false if params_empty?
+
+      dudes = DudeGl.new [@params1.flatten.compact, @params2.flatten.compact],
+                          dudes_per_row_max: 4, renamed: renamed, diff: true
+      dudes.render
+
+      label ? dudes.save("#{label}_local") : dudes.save("#{fname}_local")
+    end
+
     def process_item(project_file)
       code = open(project_file).read
       @params_list << Dudes::Calculator.new(code).call
     end
 
     def process_item_for_diff(item)
-      processed_code = ProcessCodeService.new(@public_pr_link, @pull_branch, item).call
+      processed_code = ProcessCodeService.new(@path, @pull_branch, item).call
       @params1 << processed_code.first
       @params2 << processed_code.last
     end
 
     def process_item_for_diff_local(item)
-      processed_code = ProcessCodeService.new(@public_pr_link, @pull_branch, item, local = true).call
+      processed_code = ProcessCodeService.new(@path, @pull_branch, item, local = true).call
       @params1 << processed_code.first
       @params2 << processed_code.last
     end
