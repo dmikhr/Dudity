@@ -22,6 +22,11 @@ All code except some folders:
 
 Result will be saved in image folder in `svg` format.
 
+You can also specify particular classes that you want to exclude from analysis
+`Dudity.visualise('./projects/my_app', only: ['app/models'], ignore_classes: ['Ability', 'User'])`
+
+or analyze only selected classes:
+`Dudity.visualise('./projects/my_app', only: ['app/models'], only_classes: ['Ability', 'User'])`
 
 **visualise_diff**
 
