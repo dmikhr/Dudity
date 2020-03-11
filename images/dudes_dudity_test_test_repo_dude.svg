@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1240.0" height="720.0" style="background:white" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200.0" cy="120.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="228.2842712474619" y1="148.2842712474619" x2="228.2842712474619" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="171.7157287525381" y1="148.2842712474619" x2="171.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="228.2842712474619" y1="288.2842712474619" x2="171.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="160.0" y="76.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">OauthCallbacksController</text>
+<line x1="171.7157287525381" y1="156" x2="131.7157287525381" y2="156" style="stroke:green; stroke-width:1"/>
+<text x="112" y="146" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">github</text>
+<line x1="228.2842712474619" y1="156" x2="244.2842712474619" y2="156" style="stroke:green; stroke-width:1"/>
+<ellipse cx="249.2842712474619" cy="156" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="254.2842712474619" y1="156" x2="270.2842712474619" y2="156" style="stroke:green; stroke-width:1"/>
+<ellipse cx="275.2842712474619" cy="156" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="280.2842712474619" y1="156" x2="296.2842712474619" y2="156" style="stroke:green; stroke-width:1"/>
+<text x="278" y="146" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">oauth_provider</text>
+<line x1="298.2842712474619" y1="156" x2="305.3553390593274" y2="148.92893218813452" style="stroke:green; stroke-width:1"/>
+<circle cx="480.0" cy="120.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="148.2842712474619" x2="508.2842712474619" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="451.7157287525381" y1="148.2842712474619" x2="451.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="288.2842712474619" x2="451.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="440.0" y="76.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">ReposController</text>
+<line x1="451.7157287525381" y1="156" x2="381.7157287525381" y2="156" style="stroke:green; stroke-width:1"/>
+<text x="362" y="146" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">index</text>
+<line x1="451.7157287525381" y1="177" x2="381.7157287525381" y2="177" style="stroke:green; stroke-width:1"/>
+<text x="362" y="167" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">refresh</text>
+<line x1="451.7157287525381" y1="198" x2="381.7157287525381" y2="198" style="stroke:green; stroke-width:1"/>
+<text x="362" y="188" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">monitor</text>
+<line x1="451.7157287525381" y1="219" x2="381.7157287525381" y2="219" style="stroke:green; stroke-width:1"/>
+<text x="362" y="209" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">not_monitor</text>
+<line x1="451.7157287525381" y1="240" x2="421.7157287525381" y2="240" style="stroke:green; stroke-width:1"/>
+<ellipse cx="416.7157287525381" cy="240" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="411.7157287525381" y1="240" x2="381.7157287525381" y2="240" style="stroke:green; stroke-width:1"/>
+<text x="362" y="230" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">add_to_monitored</text>
+<line x1="451.7157287525381" y1="261" x2="421.7157287525381" y2="261" style="stroke:green; stroke-width:1"/>
+<ellipse cx="416.7157287525381" cy="261" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="411.7157287525381" y1="261" x2="381.7157287525381" y2="261" style="stroke:green; stroke-width:1"/>
+<text x="362" y="251" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">remove_from_monitored</text>
+<line x1="508.2842712474619" y1="156" x2="548.2842712474619" y2="156" style="stroke:green; stroke-width:1"/>
+<text x="528" y="146" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">id</text>
+<line x1="508.2842712474619" y1="177" x2="548.2842712474619" y2="177" style="stroke:green; stroke-width:1"/>
+<text x="528" y="167" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">repo_id</text>
+<line x1="508.2842712474619" y1="198" x2="578.2842712474619" y2="198" style="stroke:green; stroke-width:1"/>
+<text x="558" y="188" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">get_current_user_repos</text>
+<line x1="508.2842712474619" y1="219" x2="578.2842712474619" y2="219" style="stroke:green; stroke-width:1"/>
+<text x="558" y="209" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">update_user_repos</text>
+<line x1="508.2842712474619" y1="240" x2="538.2842712474619" y2="240" style="stroke:green; stroke-width:1"/>
+<ellipse cx="543.2842712474619" cy="240" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="548.2842712474619" y1="240" x2="578.2842712474619" y2="240" style="stroke:green; stroke-width:1"/>
+<text x="558" y="230" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">update_repository</text>
+<line x1="578.2842712474619" y1="240" x2="585.3553390593274" y2="232.92893218813452" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="261" x2="524.2842712474619" y2="261" style="stroke:green; stroke-width:1"/>
+<ellipse cx="529.2842712474619" cy="261" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="534.2842712474619" y1="261" x2="550.2842712474619" y2="261" style="stroke:green; stroke-width:1"/>
+<ellipse cx="555.2842712474619" cy="261" rx="5" ry="2" style="stroke:green; stroke-width:1" fill="white"/>
+<line x1="560.2842712474619" y1="261" x2="576.2842712474619" y2="261" style="stroke:green; stroke-width:1"/>
+<text x="558" y="251" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">load_repos</text>
+<circle cx="760.0" cy="120.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="788.2842712474619" y1="148.2842712474619" x2="788.2842712474619" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="731.7157287525381" y1="148.2842712474619" x2="731.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="788.2842712474619" y1="288.2842712474619" x2="731.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="720.0" y="76.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">ApplicationRecord</text>
+<circle cx="1040.0" cy="120.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="1068.284271247462" y1="148.2842712474619" x2="1068.284271247462" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="1011.7157287525381" y1="148.2842712474619" x2="1011.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="1068.284271247462" y1="288.2842712474619" x2="1011.7157287525381" y2="288.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="1000.0" y="76.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">User</text>
+<line x1="1011.7157287525381" y1="156" x2="941.7157287525381" y2="156" style="stroke:green; stroke-width:1"/>
+<text x="922" y="146" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">create_authorization!</text>
+<line x1="941.7157287525381" y1="156" x2="934.6446609406727" y2="148.92893218813452" style="stroke:green; stroke-width:1"/>
+<circle cx="200.0" cy="440.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="228.2842712474619" y1="468.2842712474619" x2="228.2842712474619" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="171.7157287525381" y1="468.2842712474619" x2="171.7157287525381" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="228.2842712474619" y1="608.2842712474619" x2="171.7157287525381" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="160.0" y="396.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">GitDiffService</text>
+<circle cx="480.0" cy="440.0" r="40" fill="white" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="468.2842712474619" x2="508.2842712474619" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="451.7157287525381" y1="468.2842712474619" x2="451.7157287525381" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="608.2842712474619" x2="451.7157287525381" y2="608.2842712474619" style="stroke:green; stroke-width:1"/>
+<text x="440.0" y="396.0" font-family="arial" font-size="14" fill="green" style="writing-mode: lr">Task3</text>
+<line x1="451.7157287525381" y1="492" x2="411.7157287525381" y2="492" style="stroke:green; stroke-width:1"/>
+<text x="392" y="482" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">init</text>
+<line x1="411.7157287525381" y1="492" x2="404.6446609406726" y2="484.9289321881345" style="stroke:green; stroke-width:1"/>
+<line x1="508.2842712474619" y1="492" x2="548.2842712474619" y2="492" style="stroke:green; stroke-width:1"/>
+<text x="528" y="482" font-family="arial" font-size="10" fill="green" style="writing-mode: lr">checked?</text>
+<line x1="548.2842712474619" y1="492" x2="555.3553390593274" y2="484.9289321881345" style="stroke:green; stroke-width:1"/>
+<line x1="548.2842712474619" y1="492" x2="555.3553390593274" y2="499.0710678118655" style="stroke:green; stroke-width:1"/>
+</svg>

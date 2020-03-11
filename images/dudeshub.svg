@@ -1,0 +1,98 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1240.0" height="720.0" style="background:white" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200.0" cy="120.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="228.2842712474619" y1="148.2842712474619" x2="228.2842712474619" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="171.7157287525381" y1="148.2842712474619" x2="171.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="228.2842712474619" y1="288.2842712474619" x2="171.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="160.0" y="76.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">Repo</text>
+<circle cx="480.0" cy="120.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="508.2842712474619" y1="148.2842712474619" x2="508.2842712474619" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="451.7157287525381" y1="148.2842712474619" x2="451.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="508.2842712474619" y1="288.2842712474619" x2="451.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="440.0" y="76.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">Authorization</text>
+<circle cx="760.0" cy="120.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="788.2842712474619" y1="148.2842712474619" x2="788.2842712474619" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="731.7157287525381" y1="148.2842712474619" x2="731.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="788.2842712474619" y1="288.2842712474619" x2="731.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="720.0" y="76.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">Ability</text>
+<line x1="731.7157287525381" y1="156" x2="701.7157287525381" y2="156" style="stroke:black; stroke-width:1"/>
+<ellipse cx="696.7157287525381" cy="156" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="691.7157287525381" y1="156" x2="661.7157287525381" y2="156" style="stroke:black; stroke-width:1"/>
+<text x="642" y="146" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">initialize</text>
+<line x1="661.7157287525381" y1="156" x2="654.6446609406727" y2="148.92893218813452" style="stroke:black; stroke-width:1"/>
+<line x1="788.2842712474619" y1="156" x2="858.2842712474619" y2="156" style="stroke:black; stroke-width:1"/>
+<text x="838" y="146" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">user_abilities</text>
+<circle cx="1040.0" cy="120.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="1068.284271247462" y1="148.2842712474619" x2="1068.284271247462" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="1011.7157287525381" y1="148.2842712474619" x2="1011.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="1068.284271247462" y1="288.2842712474619" x2="1011.7157287525381" y2="288.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="1000.0" y="76.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">ApplicationRecord</text>
+<circle cx="200.0" cy="440.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="228.2842712474619" y1="468.2842712474619" x2="228.2842712474619" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="171.7157287525381" y1="468.2842712474619" x2="171.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="228.2842712474619" y1="608.2842712474619" x2="171.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="160.0" y="396.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">User</text>
+<line x1="171.7157287525381" y1="492" x2="101.7157287525381" y2="492" style="stroke:black; stroke-width:1"/>
+<text x="82" y="482" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">create_authorization!</text>
+<line x1="101.7157287525381" y1="492" x2="94.64466094067262" y2="484.9289321881345" style="stroke:black; stroke-width:1"/>
+<circle cx="480.0" cy="440.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="508.2842712474619" y1="468.2842712474619" x2="508.2842712474619" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="451.7157287525381" y1="468.2842712474619" x2="451.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="508.2842712474619" y1="608.2842712474619" x2="451.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="440.0" y="396.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">ApplicationController</text>
+<circle cx="760.0" cy="440.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="788.2842712474619" y1="468.2842712474619" x2="788.2842712474619" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="731.7157287525381" y1="468.2842712474619" x2="731.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="788.2842712474619" y1="608.2842712474619" x2="731.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="720.0" y="396.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">OauthCallbacksController</text>
+<line x1="731.7157287525381" y1="492" x2="691.7157287525381" y2="492" style="stroke:black; stroke-width:1"/>
+<text x="672" y="482" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">github</text>
+<line x1="788.2842712474619" y1="492" x2="804.2842712474619" y2="492" style="stroke:black; stroke-width:1"/>
+<ellipse cx="809.2842712474619" cy="492" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="814.2842712474619" y1="492" x2="830.2842712474619" y2="492" style="stroke:black; stroke-width:1"/>
+<ellipse cx="835.2842712474619" cy="492" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="840.2842712474619" y1="492" x2="856.2842712474619" y2="492" style="stroke:black; stroke-width:1"/>
+<text x="838" y="482" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">oauth_provider</text>
+<line x1="858.2842712474619" y1="492" x2="865.3553390593274" y2="484.9289321881345" style="stroke:black; stroke-width:1"/>
+<circle cx="1040.0" cy="440.0" r="40" fill="white" style="stroke:black; stroke-width:1"/>
+<line x1="1068.284271247462" y1="468.2842712474619" x2="1068.284271247462" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="1011.7157287525381" y1="468.2842712474619" x2="1011.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<line x1="1068.284271247462" y1="608.2842712474619" x2="1011.7157287525381" y2="608.2842712474619" style="stroke:black; stroke-width:1"/>
+<text x="1000.0" y="396.0" font-family="arial" font-size="14" fill="black" style="writing-mode: lr">ReposController</text>
+<line x1="1011.7157287525381" y1="492" x2="941.7157287525381" y2="492" style="stroke:black; stroke-width:1"/>
+<text x="922" y="482" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">index</text>
+<line x1="1011.7157287525381" y1="513" x2="941.7157287525381" y2="513" style="stroke:black; stroke-width:1"/>
+<text x="922" y="503" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">refresh</text>
+<line x1="1011.7157287525381" y1="534" x2="941.7157287525381" y2="534" style="stroke:black; stroke-width:1"/>
+<text x="922" y="524" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">monitor</text>
+<line x1="1011.7157287525381" y1="555" x2="941.7157287525381" y2="555" style="stroke:black; stroke-width:1"/>
+<text x="922" y="545" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">not_monitor</text>
+<line x1="1011.7157287525381" y1="576" x2="981.7157287525381" y2="576" style="stroke:black; stroke-width:1"/>
+<ellipse cx="976.7157287525381" cy="576" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="971.7157287525381" y1="576" x2="941.7157287525381" y2="576" style="stroke:black; stroke-width:1"/>
+<text x="922" y="566" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">add_to_monitored</text>
+<line x1="1011.7157287525381" y1="597" x2="981.7157287525381" y2="597" style="stroke:black; stroke-width:1"/>
+<ellipse cx="976.7157287525381" cy="597" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="971.7157287525381" y1="597" x2="941.7157287525381" y2="597" style="stroke:black; stroke-width:1"/>
+<text x="922" y="587" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">remove_from_monitored</text>
+<line x1="1068.284271247462" y1="492" x2="1108.284271247462" y2="492" style="stroke:black; stroke-width:1"/>
+<text x="1088" y="482" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">id</text>
+<line x1="1068.284271247462" y1="513" x2="1108.284271247462" y2="513" style="stroke:black; stroke-width:1"/>
+<text x="1088" y="503" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">repo_id</text>
+<line x1="1068.284271247462" y1="534" x2="1138.284271247462" y2="534" style="stroke:black; stroke-width:1"/>
+<text x="1118" y="524" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">get_current_user_repos</text>
+<line x1="1068.284271247462" y1="555" x2="1138.284271247462" y2="555" style="stroke:black; stroke-width:1"/>
+<text x="1118" y="545" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">update_user_repos</text>
+<line x1="1068.284271247462" y1="576" x2="1098.284271247462" y2="576" style="stroke:black; stroke-width:1"/>
+<ellipse cx="1103.284271247462" cy="576" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="1108.284271247462" y1="576" x2="1138.284271247462" y2="576" style="stroke:black; stroke-width:1"/>
+<text x="1118" y="566" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">update_repository</text>
+<line x1="1138.284271247462" y1="576" x2="1145.3553390593274" y2="568.9289321881346" style="stroke:black; stroke-width:1"/>
+<line x1="1068.284271247462" y1="597" x2="1084.284271247462" y2="597" style="stroke:black; stroke-width:1"/>
+<ellipse cx="1089.284271247462" cy="597" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="1094.284271247462" y1="597" x2="1110.284271247462" y2="597" style="stroke:black; stroke-width:1"/>
+<ellipse cx="1115.284271247462" cy="597" rx="5" ry="2" style="stroke:black; stroke-width:1" fill="white"/>
+<line x1="1120.284271247462" y1="597" x2="1136.284271247462" y2="597" style="stroke:black; stroke-width:1"/>
+<text x="1118" y="587" font-family="arial" font-size="10" fill="black" style="writing-mode: lr">load_repos</text>
+</svg>

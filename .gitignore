@@ -1,0 +1,9 @@
+.DS_Store
+.byebug_history
+*.gem
+*.html
+*.png
+*.svg
+
+# Rubocop log made by rubocop > cop.log
+cop.log
