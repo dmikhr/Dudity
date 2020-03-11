@@ -6,6 +6,15 @@ See examples in `main.rb`
 
 Gem supports 3 methods: `visualise`, `visualise_diff`, `visualise_pr`
 
+**Installation**
+
+For installation run:
+
+`gem install dudity`
+
+or add gem to `Gemfile`:
+
+`gem 'dudity'`
 
 **visualise**
 
@@ -51,3 +60,8 @@ Similar to `visualise_diff` but can be used for public pull requests. Instead of
 or
 
 `Dudity.visualise_pr('./projects/my_app', pull_branch: 'pr_branch', as: :svg)`
+
+**Credits**
+
+* Code parser (`lib/dudes.rb`) was created by Victor Shepelev ([zverok](https://github.com/zverok))
+* The idea of code visualization with stick dudes was [presented](https://www.youtube.com/watch?v=MWGfwgL-934) by [Ivan Nemytchenko](https://github.com/inem) on RubyRussia 2019 conference

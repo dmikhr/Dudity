@@ -1,9 +1,5 @@
-# use source code of gems to simplify their code editing (if improvements are needed or bugs are found)
-# in the final version of app gems will be used
-require '/Users/dmkp/Documents/code/ruby/dudes/dudegl_repo/lib/dudegl.rb'
-require '/Users/dmkp/Documents/code/ruby/dudes/zverok_dudes_fork2/dudes/lib/dudes.rb'
+require 'dudegl'
 require 'open-uri'
-require 'byebug'
 
 Dir[File.dirname(__FILE__) + '/**/*.rb'].each {|file| require_relative file }
 

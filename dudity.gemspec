@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email = ["dp@khramtsov.net"]
   s.summary = 'Analyze Rails code with stick dudes'
   s.description = 'Try DudeGL code visualization in your Rails projects'
-  s.homepage = 'https://github.com/dmikhr/DudeGL/wiki'
+  s.homepage = 'https://github.com/dmikhr/Dudity'
   s.license = 'MIT'
   s.files = Dir['lib/**/*'].keep_if { |file| File.file?(file) }
 end
