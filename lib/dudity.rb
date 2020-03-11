@@ -15,6 +15,7 @@ class Dudity
       opt.key?(:only) ? only = opt[:only] : only = nil
       opt.key?(:ignore_classes) ? ignore_classes = opt[:ignore_classes] : ignore_classes = nil
       opt.key?(:only_classes) ? only_classes = opt[:only_classes] : only_classes = nil
+      opt.key?(:filename_suffix) ? filename_suffix = opt[:filename_suffix] : filename_suffix = ''
 
       project_files = ScanApp.call(@path, except, only)
       app_name = @path.split('/').last
@@ -28,7 +29,7 @@ class Dudity
 
       dudes = DudeGl.new @params_list, dudes_per_row_max: 4
       dudes.render
-      dudes.save app_name
+      dudes.save "#{app_name}#{filename_suffix}"
     end
 
     def visualise_diff(path_to_diff, opt = {})
